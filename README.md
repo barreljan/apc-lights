@@ -25,6 +25,7 @@ So, a sort of home automation but different.
    - Set the email function to your wishes in api_sunset.py
    - Set the correct latitude and longtitude of the param
      'link' in api_sunset.py
+   - Set the job.new accordingly to your installation dir
    - Set the snmp IP's and communities in lights.sh
 2) Edit your crontab (crontab -e) and add these lines:
 ```
