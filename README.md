@@ -14,18 +14,18 @@ itself to the correct time (...twilight_end).
 So, a sort of home automation but different.
 
 ## Requirements
-Linux enviroment
-Python 2.7
-modules: json, requests, python-crontab
-snmp tools (like snmputils for snmpget and snmpset)
-SNMP enabled switch device
+- Linux enviroment
+- Python 2.7
+- modules: json, requests, python-crontab
+- snmp tools (like snmputils for snmpget and snmpset)
+- SNMP enabled switch device
 
 ### Installing
 1) Clone the 2 files, make them executable.
-	a)  	Set the email function to your wishes in api_sunset.py
-	b)	Set the correct latitude and longtitude of the param
-		'link' in api_sunset.py
-	c)	Set the snmp IP's and communities in lights.sh
+   - Set the email function to your wishes in api_sunset.py
+   - Set the correct latitude and longtitude of the param
+     'link' in api_sunset.py
+   - Set the snmp IP's and communities in lights.sh
 2) Edit your crontab (crontab -e) and add these lines:
 ```
 0 6 * * * <youruser> /your/dir/api_sunset.py
@@ -39,6 +39,8 @@ random. It will reset itself eventually.
 5) Check the new cron job with "crontab -l"
 
 Disclamer:
+
 Yes, the lights.sh could be done in a different manner.
+
 Yes, you can use z-wave/hue/insert-vendor, but if you
 already have such APC rack pdu behind your furniture...
