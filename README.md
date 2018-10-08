@@ -22,10 +22,11 @@ SNMP enabled switch device
 
 ### Installing
 1) Clone the 2 files, make them executable.
-1a)   Set the email function to your wishes in api_sunset.py
-1b)   Set the snmp IP's and communities in lights.sh
-2) Edit your crontab (crontab -e)
-3) Add the lines:
+	a)  	Set the email function to your wishes in api_sunset.py
+	b)	Set the correct latitude and longtitude of the param
+		'link' in api_sunset.py
+	c)	Set the snmp IP's and communities in lights.sh
+2) Edit your crontab (crontab -e) and add these lines:
 ```
 0 6 * * * <youruser> /your/dir/api_sunset.py
 1 1 * * * <youruser> /your/dir/lights.sh on >/dev/null 2>&1
