@@ -42,7 +42,7 @@ random. It will reset itself eventually.
 
 ### Different time schemes
 The API gives multiple times in a JSON format. You can choose
-your own time for switching on your lights(of device)
+your own time for switching on your lights(or device)
 
 ```
 {
@@ -67,6 +67,7 @@ For now, it uses the 'nautical_twilight_end' time. Set it
 to your prefered time in api_sunset.py
 
 Disclamer:
+
 Yes, the lights.sh could be done in a different manner.
 Yes, you can use z-wave/hue/insert-vendor, but if you
 already have such APC rack pdu behind your furniture...
