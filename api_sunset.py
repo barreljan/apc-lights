@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3.5
 #
 # @author bartjan@pc-mania.nl
 # Oct-6,2018
@@ -7,9 +7,11 @@ import requests
 import json
 import smtplib
 import sys
+import time
 from crontab import CronTab
 
 link = 'https://api.sunrise-sunset.org/json?lat=52.840449&lng=-4.972762?&formatted=0'
+localtime = time.localtime()
 
 def time_of(input):
     # Get the JSON output from the API
@@ -41,7 +43,7 @@ def reset_crontab(minute,hour):
         sys.exit()
 
     # Set the new job at the given time
-    job = cron.new(command='/bin/bash /root/scripts/lights.sh on >/dev/null 2>&1')
+    job = cron.new(command='/bin/bash /root/scripts/apc-lights/lights.sh on >/dev/null 2>&1')
     job.minute.on(minute)
     job.hour.on(hour)
 
@@ -61,8 +63,11 @@ def sendmail(msg):
 
 # Get new time and split in hour/minute
 time = time_of('nautical_twilight_end')
-hour = time.split(':')[0]
-minute = time.split(':')[1]
+hour = int(time.split(':')[0])
+if not localtime.tm_isdst:
+    # Correct daylight savings
+    hour = hour - 1
+minute = int(time.split(':')[1])
 
 # Update (so reset) the cronjob
 reset_crontab(minute,hour)
