@@ -14,7 +14,7 @@ itself to the correct time (...twilight_end).
 So, a sort of home automation but different.
 
 ## Requirements
-- Linux enviroment
+- Linux environment
 - Python 3.x (compatible with 2.7)
 - modules: json, requests, python-crontab
 - snmp tools (like snmputils for snmpget and snmpset)
