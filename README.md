@@ -15,7 +15,7 @@ So, a sort of home automation but different.
 
 ## Requirements
 - Linux enviroment
-- Python 2.7
+- Python 3.x (compatible with 2.7)
 - modules: json, requests, python-crontab
 - snmp tools (like snmputils for snmpget and snmpset)
 - SNMP enabled switch device
